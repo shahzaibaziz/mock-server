@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  mock_server:
+    container_name: mock_server
+    build: .
+    volumes:
+      - .:/mock-server
+    ports:
+      - '8081:8081'
+    networks:
+      - 'auth-delegation-svc_default'
+
+networks:
+  auth-delegation-svc_default:
+    external: true
