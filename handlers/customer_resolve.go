@@ -2,12 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
+	"github.com/google/uuid"
 	"net/http"
 
-	"github.com/spf13/viper"
-	"github.com/thanhpk/randstr"
-
 	"github.com/shahzaibaziz/mock-server/config"
+	"github.com/spf13/viper"
 )
 
 type AwsCustomer struct {
@@ -21,7 +20,7 @@ func CustomerResolveHandler(w http.ResponseWriter, r *http.Request) {
 	if viper.GetString(config.CustomerIDType) == "STATIC" {
 		data = AwsCustomer{ProductCode: "657mykebcauj9r2yp9zkb16nm", CustomerIdentifier: viper.GetString(config.CustomerID)}
 	} else {
-		data = AwsCustomer{ProductCode: "657mykebcauj9r2yp9zkb16nm", CustomerIdentifier: randstr.String(10)}
+		data = AwsCustomer{CustomerIdentifier:uuid.New().String(), ProductCode:"657mykebcauj9r2yp9zkb16nm"}
 	}
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)

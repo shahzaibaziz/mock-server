@@ -4,6 +4,9 @@ services:
   mock_server:
     container_name: mock_server
     build: .
+    environment:
+      CUSTOMER_ID: test1223
+      CUSTOMER_ID_TYPE: RANDOM
     volumes:
       - .:/mock-server
     ports:

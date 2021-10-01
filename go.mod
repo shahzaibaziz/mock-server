@@ -10,9 +10,9 @@ require (
 	github.com/go-openapi/strfmt v0.20.2
 	github.com/go-openapi/swag v0.19.15
 	github.com/go-openapi/validate v0.20.2
-	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/google/uuid v1.1.2
+	github.com/gorilla/mux v1.8.0
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/spf13/viper v1.8.1
-	github.com/thanhpk/randstr v1.0.4 // indirect
 	golang.org/x/net v0.0.0-20210908191846-a5e095526f91
 )
